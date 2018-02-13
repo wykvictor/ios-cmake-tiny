@@ -5,12 +5,18 @@
 //  Created by wykvictor on 2018/2/9.
 //  Copyright © 2018年 wykvictor. All rights reserved.
 //
-#include "TargetConditionals.h"
-#if TARGET_OS_OSX
-#include <fstream>
+
+#ifdef __APPLE__
+  #include "TargetConditionals.h"
+  #if TARGET_OS_OSX
+    #include <fstream>
+  #else
+    #import <Foundation/Foundation.h>
+  #endif
 #else
-#import <Foundation/Foundation.h>
+  #include <fstream>
 #endif
+
 #include <iostream>
 #include <vector>
 
