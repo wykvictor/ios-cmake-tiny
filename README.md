@@ -16,7 +16,7 @@ A tiny CMake project for cross-platform MacOS/iOS App: setting target version, b
 3. cmake -GXcode ..
 4. open CMakeIOS.xcodeproj
 5. build target cmakeios with Xcode
-6. run with Xcode or ./Debug/cmakeios from command line
+6. run with Xcode or (cd Debug && ./cmakeios) from command line
 ```
 
 #### Xcode: target -> IOS
