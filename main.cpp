@@ -22,8 +22,12 @@
 
 int main(int argc, char * argv[]) {
   std::vector<char> buffer;
-#if (!__APPLE__) || TARGET_OS_OSX  // Platform: MacOS
-  std::ifstream ifs("../../Resource/test.txt", std::ios::binary | std::ios::ate);  // open and move to end
+#if (!__APPLE__) || TARGET_OS_OSX  // Platform: MacOS / Linux
+  #if TARGET_OS_OSX
+    std::ifstream ifs("../../Resource/test.txt", std::ios::binary | std::ios::ate);  // open and move to end
+  #else  // linux
+    std::ifstream ifs("../Resource/test.txt", std::ios::binary | std::ios::ate);  // open and move to end
+  #endif
   if (!ifs.fail()) {
     buffer.resize(ifs.tellg());
     if (!ifs.seekg(0, std::ios::beg).read(buffer.data(), static_cast<std::streamsize>(buffer.size()))) {
