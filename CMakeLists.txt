@@ -17,6 +17,7 @@ source_group("BundleRes" FILES ${Res_Files})
 add_executable(cmakeios main.cpp ${Res_Files})
 
 if(IOS)
+  target_link_libraries(cmakeios "-framework UIKit -framework OpenGLES -framework Metal")
   SET_XCODE_PROPERTY(cmakeios CODE_SIGN_IDENTITY "iPhone Developer")
   SET_XCODE_PROPERTY(cmakeios DEVELOPMENT_TEAM "IDIDIDIDID")  # TeamID, example "CW3H47U4OR"
 endif()
