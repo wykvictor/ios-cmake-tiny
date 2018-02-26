@@ -1,5 +1,5 @@
 # ios-cmake-tiny
-A tiny CMake project for cross-platform MacOS/iOS App: setting target version, bundle file, code signing...
+A tiny CMake project for cross-platform MacOS/iOS App: setting target version, bundle file, code signing, add Framework(OpenGL,Metal)...
 
 #### Linux
 ```
